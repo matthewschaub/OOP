@@ -65,12 +65,43 @@ Deck make_deck()
   Card {King, Hearts}
 
   };
-};
+}
+/* Irrelevant after class discussion on how to intialize deck 
+std::vector<Standard_card> newDeck()
+{
+  std::vector<Standard_card> Deck; 
+  
+  int counter = 0; 
+  for (int i = 0; i < numSuit; ++i)
+  {
+    for (int j = 0; j < numRank; ++j)
+    {
+      Standard_card c;
+      c.suit = static_cast<Suit> (i);
+      c.rank = static_cast<Rank> (j);
+      Deck.push_back(c);
+      counter++; 
+    }
+  }
+  return Deck; 
+}
+*/
+
 //prints the deck of cards
 void print_deck(Deck deck){
   for(auto i : deck)
     std::cout << i << " "; 
   std::cout<<std::endl; 
+}
+//shuffles the deck of cards
+void shuffle_deck(Deck& deck)
+{
+  srand(time(0));
+  int deckSize = deck.size();
+  for(int i = 0; i < deckSize*5; ++i)
+  {
+    std::swap(deck[i%deckSize], deck[rand()%deckSize]);
+  }
 }
 //Overloaded operator implemented for the card class
 std::ostream& operator<< (std::ostream& stream, const Card& card){
