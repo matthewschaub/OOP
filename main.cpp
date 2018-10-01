@@ -1,58 +1,43 @@
 #include <iostream>
 #include <vector>
-
-enum Suit
-{
-  Spades,
-  Clubs,
-  Diamonds,
-  Hearts,
-};
-
-enum Rank
-{
-  Ace,
-  Two,
-  Three,
-  Four,
-  Five,
-  Six,
-  Seven,
-  Eight,
-  Nine,
-  Ten,
-  Jack,
-  Queen,
-  King,
-};
-
-struct Standard_card
-{
-  Suit suit;
-  Rank rank;
-};
+#include "card.hpp"
 
 const int numSuit = 4;
 const int numRank = 13;
 
-std::vector<Standard_card> newDeck();
-void shuffle(std::vector<Standard_card>&);
-void printDeck(std::vector<Standard_card>);
+void shuffle(std::vector<Card>&);
 
 int main()
 {
-  std::vector<Standard_card> Deck = newDeck();
-  printDeck(Deck);
-  shuffle(Deck);
-  printDeck(Deck);
-  std::vector<Standard_card> player1;
-  std::vector<Standard_card> player2;
+  Deck deck = make_deck();
+  //Would ideally like to do range based for loop on this vector but do
+  //not fully understand the syntax to implement
+  print_deck(deck);
+  shuffle(deck);
+  std::cout << "\nshuffled\n" << std::endl; 
+  print_deck(deck);
+  deck = make_deck(); 
+  std::cout << "\nnew\n" << std::endl; 
+  print_deck(deck);
+  //printDeck(deck);
+  //std::vector<Standard_card> player1;
+  //std::vector<Standard_card> player2;
   
 
 
 return 0; 
 }
+void shuffle(Deck& v)
+{
+  srand(time(0));
+  int deckSize = v.size();
+  for(int i = 0; i < 1000; ++i)
+  {
+    std::swap(v[rand()%deckSize], v[rand()%deckSize]);
+  }
+}
 
+/* Irrelevant after class discussion on how to intialize deck 
 std::vector<Standard_card> newDeck()
 {
   std::vector<Standard_card> Deck; 
@@ -71,17 +56,4 @@ std::vector<Standard_card> newDeck()
   }
   return Deck; 
 }
-void shuffle(std::vector<Standard_card>& v)
-{
-  srand(time(0));
-  int deckSize = v.size();
-  for(int i = 0; i < 1000; ++i)
-  {
-    std::swap(v[rand()%deckSize], v[rand()%deckSize]);
-  }
-}
-void printDeck(std::vector<Standard_card> v)
-{
-  for(int i = 0; i < v.size(); ++i)
-    std::cout<<v[i].suit<< " " <<v[i].rank <<std::endl; 
-}
+*/
