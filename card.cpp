@@ -113,7 +113,15 @@ void deal_deck(Deck const& deck, Deck& p1, Deck& p2)
     p2.push_back(deck[i]);
   }
 }
-
+bool operator== (const Card &c1, const Card &c2){
+  return(c1.m_rank == c2.m_rank);
+}
+bool operator < (const Card &c1, const Card &c2){
+  return(c1.m_rank < c2.m_rank);
+}
+bool operator > (const Card &c1, const Card &c2){
+  return(c1.m_rank > c2.m_rank);
+}
 //Overloaded operator implemented for the card class
 std::ostream& operator<< (std::ostream& stream, const Card& card){
   switch(card.m_rank) {

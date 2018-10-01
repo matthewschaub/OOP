@@ -36,6 +36,9 @@ public:
   Rank getRank () {return m_rank;};
   Suit getSuit () {return m_suit;};
   friend std::ostream& operator<< (std::ostream& stream, const Card& card);
+  friend bool operator== (const Card &c1, const Card &c2);
+  friend bool operator < (const Card &c1, const Card &c2);
+  friend bool operator > (const Card &c1, const Card &c2);
 
 private:
   Rank m_rank;
