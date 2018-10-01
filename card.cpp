@@ -103,6 +103,17 @@ void shuffle_deck(Deck& deck)
     std::swap(deck[i%deckSize], deck[rand()%deckSize]);
   }
 }
+void deal_deck(Deck const& deck, Deck& p1, Deck& p2)
+{
+  int deckSize = deck.size();
+  for(int i = 0; i < deckSize; ++i)
+  {
+    p1.push_back(deck[i]);
+    ++i; 
+    p2.push_back(deck[i]);
+  }
+}
+
 //Overloaded operator implemented for the card class
 std::ostream& operator<< (std::ostream& stream, const Card& card){
   switch(card.m_rank) {

@@ -8,11 +8,9 @@ const int numRank = 13;
 int main()
 {
   Deck deck = make_deck();
-  print_deck(deck);
+  Deck p1, p2; 
   shuffle_deck(deck);
-  print_deck(deck);
-
+  deal_deck(deck, p1, p2);
+  
 return 0; 
 }
-
-

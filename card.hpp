@@ -45,6 +45,7 @@ private:
 using Deck = std::vector<Card>;
 Deck make_deck();
 void print_deck(Deck);
-void shuffle_deck(std::vector<Card>&);  
+void shuffle_deck(std::vector<Card>&);
+void deal_deck(Deck const&, Deck&, Deck&);  
 
 #endif
