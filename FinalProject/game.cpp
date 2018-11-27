@@ -17,7 +17,7 @@ int Game::numOpponents()
             return o;
     }
 }
-int Game::startStack()
+int Game::numStartStack()
 {
     int c;
     while(true) // post test loop

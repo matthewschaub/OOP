@@ -11,9 +11,10 @@ int main()
   
   Game g; 
   g.setOpponents(g.numOpponents());
+  g.setStartStack(g.numStartStack());
 
-  for(int i = 0; i <= numOp; ++i){
-  	g.player.push_back(Player(g.st)); 
+  for(int i = 0; i <= g.getOpponents(); ++i){
+  	g.players.push_back(Player(g.getStartStack())); 
   }
 
 
