@@ -17,3 +17,20 @@ int Game::numOpponents()
             return o;
     }
 }
+int Game::startStack()
+{
+    int c;
+    while(true) // post test loop
+    {
+        std::cout <<"Enter starting chip stack (100-10000): "; 
+        std::cin >> c; 
+        if((std::cin.fail()) || (c < 100) || (c > 10000))
+        {
+            std::cout << "Invalid entry, try again" << std::endl;  
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        }
+        else
+            return c;
+    }
+}

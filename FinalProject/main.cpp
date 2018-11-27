@@ -10,8 +10,11 @@ int main()
   shuffle_deck(deck);
   
   Game g; 
-  int numOp = g.numOpponents(); 
-  g.setOpponents(numOp);
+  g.setOpponents(g.numOpponents());
+
+  for(int i = 0; i <= numOp; ++i){
+  	g.player.push_back(Player(g.st)); 
+  }
 
 
 
