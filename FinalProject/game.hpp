@@ -24,9 +24,18 @@ public:
 
   void displayChipCounts(); 
 
+
+  //flop
+  //turn & river
+  //burn
+  //deal
+  //dealer
+  //win hand
+
   
  
 private:
+  int dealer = 0; 
   int opponents;
   int startStack; 
   int pot;
