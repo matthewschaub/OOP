@@ -28,7 +28,8 @@ public:
   //flop
   //turn & river
   //burn
-  //deal
+  //deal takes an int as parameter int represents who is the dealer. 
+  //blinds same as deal int as parameter 
   //dealer
   //win hand
 

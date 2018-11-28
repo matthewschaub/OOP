@@ -9,7 +9,11 @@ class Player
 public: 
   Player(int stack) : chipStack(stack){}; 
   int getChipCount() {return chipStack;};
-  
+  //check
+  //bet
+  //call
+  //raise
+  //fold
 private:
   int chipStack;
   Deck deck; 
