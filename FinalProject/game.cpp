@@ -31,6 +31,16 @@ int Game::numStartStack()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
         }
         else
+            std::cout << std::endl; 
             return c;
     }
+}
+void Game::displayChipCounts(){
+    std::cout << "Chip counts: " << std::endl; 
+    int j = 1; 
+    for (auto i : players){
+        std::cout << "Player " << j << ' ' << i.getChipCount() << std::endl; 
+        ++j;
+    }
+    std::cout << '\n';
 }

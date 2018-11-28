@@ -18,7 +18,11 @@ public:
 
   int getPot() {return pot;};
   void setPot(int p) {pot = p;};
+
   std::vector<Player> getPlayers(){ return players;}
+  void pushBack(Player p){players.push_back(p);};
+
+  void displayChipCounts(); 
 
   
  

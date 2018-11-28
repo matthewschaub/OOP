@@ -14,8 +14,10 @@ int main()
   g.setStartStack(g.numStartStack());
 
   for(int i = 0; i <= g.getOpponents(); ++i){
-  	g.players.push_back(Player(g.getStartStack())); 
+  	g.pushBack(Player(g.getStartStack()));
   }
+  g.displayChipCounts(); 
+
 
 
 
