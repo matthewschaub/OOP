@@ -31,6 +31,8 @@ public:
   void displayChipCounts(); 
   void deal(int);
   void printHands();
+  void printBoard(){print_deck(board);}; 
+  void resetBoard(){board.clear();};
   
   
   
@@ -53,6 +55,7 @@ public:
  
 private:
   Deck deck = make_deck(); 
+  Deck board; 
   int opponents;
   int startStack; 
   int dealer;

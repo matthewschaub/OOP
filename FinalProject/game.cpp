@@ -60,11 +60,13 @@ void Game::deal(int d){
     shuffle_deck(deck);
     for (int i = 0; i < players.size(); ++i)
         players[i].resetHand(); 
-    for(int i = d; i < (players.size() * 2) + d; ++i){
+    int j = players.size() * 2; 
+    for(int i = d; i < j + d; ++i){
         players[i%players.size()].pushBack(deck[i-d]);
     }
-
+    board = {deck[j+1],deck[j+2], deck[j+3], deck[j+5], deck[j+7]};
 }
+
 void Game::printHands(){
     for (auto i : players){
         i.printHand(); 

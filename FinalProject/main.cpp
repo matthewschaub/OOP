@@ -22,7 +22,9 @@ int main()
   for(int i = 0; i < g.getOpponents() + 1; ++i){
   	g.deal(g.getDealer());
   	g.printHands(); 
-  	g.advanceDeal(); 
+  	g.advanceDeal();
+  	g.printBoard(); 
+  	g.resetBoard();  
   	std::cout << std::endl; 
   	//g.postBlinds();
   	//g.displayChipCounts(); 
