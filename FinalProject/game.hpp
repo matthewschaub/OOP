@@ -21,7 +21,8 @@ public:
   void advanceDeal(){dealer = (dealer + 1) % players.size();}; 
   //TODO: highcarddeals
   void postBlinds();
-
+  void eliminate();
+  void testElim(int);
   int getPot() {return pot;};
   void setPot(int p) {pot = p;};
 

@@ -47,5 +47,18 @@ void Game::displayChipCounts(){
 void Game::postBlinds(){
     pot += smallBlind * 3; 
     players[(dealer + 1)%players.size()].setChipStack(-smallBlind);
-    players[(dealer + 2)%players.size()].setChipStack(-smallBlind*2);
+    players[(dealer + 2)%players.size()].setChipStack(-(smallBlind + smallBlind));
+}
+
+void Game::eliminate(){
+     for (int i = 0; i < players.size(); ++i){
+        if(players[i].getChipStack() <= 0){
+            players.erase(players.begin() + i);
+            --i; 
+
+        }
+    }
+}
+void Game::testElim(int x){
+    players[x].setChipStack(-players[x].getChipStack());
 }

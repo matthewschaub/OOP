@@ -12,8 +12,16 @@ int main()
   initializeGame(g); 
   Deck deck = make_deck();
   shuffle_deck(deck);
- 
-  for(int i = 0; i < 20; ++i){
+ /*
+  for(int i = 0; i < g.getOpponents() + 1; ++i){
+  	g.postBlinds();
+  	g.displayChipCounts(); 
+  	g.advanceDeal(); 
+  }*/
+  g.testElim(5); 
+  g.testElim(6);
+  g.eliminate();
+  for(int i = 0; i < g.getOpponents() + 1; ++i){
   	g.postBlinds();
   	g.displayChipCounts(); 
   	g.advanceDeal(); 
@@ -43,7 +51,7 @@ void initializeGame(Game& g){
   g.setStartStack(g.numStartStack());
   g.setDealer(0);
   for(int i = 0; i <= g.getOpponents(); ++i){
-  	g.pushBack(Player(g.getStartStack(), "Player " + std::to_string(i + 1)));
+  	g.pushBack(Player(g.getStartStack(), "Player " + std::to_string(i + 1), i));
   }
   g.displayChipCounts(); 
 }
