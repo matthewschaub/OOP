@@ -44,3 +44,8 @@ void Game::displayChipCounts(){
     }
     std::cout << '\n';
 }
+void Game::postBlinds(){
+    pot += smallBlind * 3; 
+    players[(dealer + 1)%players.size()].setChipStack(-smallBlind);
+    players[(dealer + 2)%players.size()].setChipStack(-smallBlind*2);
+}

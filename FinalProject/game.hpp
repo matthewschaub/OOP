@@ -18,8 +18,9 @@ public:
 
   int getDealer() {return dealer;};
   void setDealer(int d) {dealer = d;};
-  void advanceDeal(){dealer = (dealer + 1) % player.size();}; 
+  void advanceDeal(){dealer = (dealer + 1) % players.size();}; 
   //TODO: highcarddeals
+  void postBlinds();
 
   int getPot() {return pot;};
   void setPot(int p) {pot = p;};

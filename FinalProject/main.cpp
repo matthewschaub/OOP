@@ -14,8 +14,9 @@ int main()
   shuffle_deck(deck);
  
   for(int i = 0; i < 20; ++i){
-  	std::cout << "Player " << g.getDealer() + 1 << " is the dealer" << std::endl;
-  	g.setDealer((g.getDealer() + 1)%(g.getOpponents() + 1)); 
+  	g.postBlinds();
+  	g.displayChipCounts(); 
+  	g.advanceDeal(); 
   }
   //g.setPlayerChips(3, -1500);
 /*
