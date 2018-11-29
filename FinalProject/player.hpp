@@ -7,8 +7,12 @@
 class Player
 {
 public: 
-  Player(int stack) : chipStack(stack){}; 
-  int getChipCount() {return chipStack;};
+  Player(int stack, std::string n) : chipStack(stack), name(n){}; 
+  int getChipStack() {return chipStack;};
+  void setChipStack(int v) {chipStack += v;};
+
+  std::string getName() {return name;};
+  void setName(std::string n) {name = n;};
   //check
   //bet
   //call
@@ -17,5 +21,6 @@ public:
 private:
   int chipStack;
   Deck deck; 
+  std::string name;
 };
 #endif

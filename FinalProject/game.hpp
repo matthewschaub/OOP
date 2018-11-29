@@ -16,6 +16,10 @@ public:
   void setStartStack(int s){startStack = s;};
   int numStartStack();
 
+  int getDealer() {return dealer;};
+  void setDealer(int d) {dealer = d;};
+  //TODO: highcarddeals
+
   int getPot() {return pot;};
   void setPot(int p) {pot = p;};
 
@@ -24,9 +28,8 @@ public:
 
   void displayChipCounts(); 
   
-  int getDealer() {return dealer;};
-  void setDealer(int d) {dealer = d;};
-  //highcarddeals
+  
+  
 
   int getPlayerChips(int i) {return players[i].getChipStack();};
   void setPlayerChips(int i, int val) { players[i].setChipStack(val);};
@@ -45,9 +48,9 @@ public:
   
  
 private:
-  int dealer; 
   int opponents;
   int startStack; 
+  int dealer; 
   int pot;
   std::vector<Player> players; 
 };
