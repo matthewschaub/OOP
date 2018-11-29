@@ -39,7 +39,7 @@ void Game::displayChipCounts(){
     std::cout << "Chip counts: " << std::endl; 
     int j = 1; 
     for (auto i : players){
-        std::cout << "Player " << j << ' ' << i.getChipCount() << std::endl; 
+        std::cout << i.getName()<< ': ' << i.getChipStack() << std::endl; 
         ++j;
     }
     std::cout << '\n';

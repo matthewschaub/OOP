@@ -23,20 +23,29 @@ public:
   void pushBack(Player p){players.push_back(p);};
 
   void displayChipCounts(); 
+  
+  int getDealer() {return dealer;};
+  void setDealer(int d) {dealer = d;};
+  //highcarddeals
+
+  int getPlayerChips(int i) {return players[i].getChipStack();};
+  void setPlayerChips(int i, int val) { players[i].setChipStack(val);};
 
 
+  //split pot
   //flop
   //turn & river
   //burn
   //deal takes an int as parameter int represents who is the dealer. 
   //blinds same as deal int as parameter 
+  //blind levels
   //dealer
   //win hand
 
   
  
 private:
-  int dealer = 0; 
+  int dealer; 
   int opponents;
   int startStack; 
   int pot;
