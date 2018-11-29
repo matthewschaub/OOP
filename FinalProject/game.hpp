@@ -18,6 +18,7 @@ public:
 
   int getDealer() {return dealer;};
   void setDealer(int d) {dealer = d;};
+  void advanceDeal(){dealer = (dealer + 1) % player.size();}; 
   //TODO: highcarddeals
 
   int getPot() {return pot;};
@@ -50,7 +51,8 @@ public:
 private:
   int opponents;
   int startStack; 
-  int dealer; 
+  int dealer;
+  int smallBlind = 5;  
   int pot;
   std::vector<Player> players; 
 };
