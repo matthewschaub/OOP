@@ -18,13 +18,15 @@ int main()
   	g.displayChipCounts(); 
   	g.advanceDeal(); 
   }*/
-  g.testElim(5); 
-  g.testElim(6);
-  g.eliminate();
+
   for(int i = 0; i < g.getOpponents() + 1; ++i){
-  	g.postBlinds();
-  	g.displayChipCounts(); 
+  	g.deal(g.getDealer());
+  	g.printHands(); 
   	g.advanceDeal(); 
+  	std::cout << std::endl; 
+  	//g.postBlinds();
+  	//g.displayChipCounts(); 
+  	//g.advanceDeal(); 
   }
   //g.setPlayerChips(3, -1500);
 /*

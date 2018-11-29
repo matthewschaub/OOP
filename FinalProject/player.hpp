@@ -13,6 +13,10 @@ public:
 
   std::string getName() {return name;};
   void setName(std::string n) {name = n;};
+  Deck getDeck(){return hand;};
+  void pushBack(Card c){hand.push_back(c);};
+  void printHand(){print_deck(hand);};
+  void resetHand(){hand.clear();};
 
   int getId(){return id;};
   //check
@@ -23,7 +27,7 @@ public:
 private:
 	int id;
   int chipStack;
-  Deck deck; 
+  Deck hand; 
   std::string name;
 };
 #endif

@@ -31,7 +31,6 @@ int Game::numStartStack()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
         }
         else
-            std::cout << std::endl; 
             return c;
     }
 }
@@ -49,16 +48,34 @@ void Game::postBlinds(){
     players[(dealer + 1)%players.size()].setChipStack(-smallBlind);
     players[(dealer + 2)%players.size()].setChipStack(-(smallBlind + smallBlind));
 }
-
 void Game::eliminate(){
      for (int i = 0; i < players.size(); ++i){
         if(players[i].getChipStack() <= 0){
             players.erase(players.begin() + i);
             --i; 
-
         }
     }
 }
-void Game::testElim(int x){
-    players[x].setChipStack(-players[x].getChipStack());
+void Game::deal(int d){
+    shuffle_deck(deck);
+    for (int i = 0; i < players.size(); ++i)
+        players[i].resetHand(); 
+    for(int i = d; i < (players.size() * 2) + d; ++i){
+        players[i%players.size()].pushBack(deck[i-d]);
+    }
+
 }
+void Game::printHands(){
+    for (auto i : players){
+        i.printHand(); 
+    }
+}
+
+
+
+
+
+
+
+
+

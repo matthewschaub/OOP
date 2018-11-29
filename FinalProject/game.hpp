@@ -22,7 +22,6 @@ public:
   //TODO: highcarddeals
   void postBlinds();
   void eliminate();
-  void testElim(int);
   int getPot() {return pot;};
   void setPot(int p) {pot = p;};
 
@@ -30,6 +29,8 @@ public:
   void pushBack(Player p){players.push_back(p);};
 
   void displayChipCounts(); 
+  void deal(int);
+  void printHands();
   
   
   
@@ -51,6 +52,7 @@ public:
   
  
 private:
+  Deck deck = make_deck(); 
   int opponents;
   int startStack; 
   int dealer;
